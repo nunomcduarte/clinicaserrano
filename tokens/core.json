@@ -1,0 +1,84 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "Core primitives for Clínica Serrano — raw values with no semantic meaning. Layer 1 of 3 (core → semantic → components/templates). Values marked 'provisional' are estimated from Instagram exports and need confirmation against original source files.",
+  "color": {
+    "greige": {
+      "$value": "#B0A695",
+      "$type": "color",
+      "$description": "Warm greige — base for the default surface mode. Provisional, sample from source."
+    },
+    "cream-light": {
+      "$value": "#E8E2D4",
+      "$type": "color",
+      "$description": "Light cream — base for the announcement surface mode. Provisional."
+    },
+    "cream-warm": {
+      "$value": "#F2EBDD",
+      "$type": "color",
+      "$description": "Warm off-white. Used as foreground on greige surfaces. Never pure white. Provisional."
+    },
+    "charcoal": {
+      "$value": "#1A1A1A",
+      "$type": "color",
+      "$description": "Near-black with slight warmth. Foreground on cream surfaces. Not pure #000. Provisional."
+    },
+    "navy": {
+      "$value": "#1F2435",
+      "$type": "color",
+      "$description": "Deep navy. Auxiliary brand color, observed only on physical textiles (towels). Not in use on digital surfaces. Provisional."
+    }
+  },
+  "font": {
+    "family": {
+      "wordmark-serif": {
+        "$value": "TBD-Didone",
+        "$type": "fontFamily",
+        "$description": "Used only inside the SERRANO wordmark. Likely Bodoni Moda / GT Super / Canela / Didot. Confirm with original designer."
+      },
+      "display-sans": {
+        "$value": "TBD-GeometricSans",
+        "$type": "fontFamily",
+        "$description": "Single sans family used for headlines, body, the CLÍNICA portion of the wordmark, and announcement covers. Likely TWK Lausanne / PP Editorial New / Söhne / Migra. Confirm with original designer. See CHANGELOG.md ADR-0002 — there is no second sans family."
+      }
+    },
+    "weight": {
+      "light": { "$value": 300, "$type": "fontWeight" },
+      "regular": { "$value": 400, "$type": "fontWeight" },
+      "medium": { "$value": 500, "$type": "fontWeight" },
+      "bold": { "$value": 700, "$type": "fontWeight" }
+    },
+    "size": {
+      "$description": "Sizes expressed as percentages of canvas height (cqh) for Instagram, since absolute px values do not survive across canvas sizes. Use these via container queries on web.",
+      "display": { "$value": "12cqh", "$type": "dimension", "$description": "Service-name headline." },
+      "headline": { "$value": "8cqh", "$type": "dimension", "$description": "Statement headline (deep-dive body slides, announcement closing)." },
+      "subhead": { "$value": "4.5cqh", "$type": "dimension", "$description": "Subhead under cover headlines." },
+      "body": { "$value": "3.5cqh", "$type": "dimension", "$description": "Service description body." },
+      "wordmark-primary": { "$value": "2cqh", "$type": "dimension", "$description": "SERRANO portion of the wordmark." }
+    },
+    "tracking": {
+      "tight": { "$value": "-0.01em", "$type": "dimension" },
+      "normal": { "$value": "0", "$type": "dimension" },
+      "loose": { "$value": "0.04em", "$type": "dimension", "$description": "Used on the CLÍNICA portion of the wordmark." }
+    },
+    "leading": {
+      "tight": { "$value": 0.95, "$type": "number", "$description": "Display headlines, packed lines." },
+      "normal": { "$value": 1.25, "$type": "number", "$description": "Body copy." }
+    }
+  },
+  "space": {
+    "$description": "Layout spacing primitives, expressed as percentages of the shorter canvas dimension (cqi).",
+    "edge-margin": { "$value": "6%", "$type": "dimension", "$description": "Standard safe-area margin from canvas edges." },
+    "edge-margin-loose": { "$value": "8%", "$type": "dimension" },
+    "headline-to-body": { "$value": "1lh", "$type": "dimension", "$description": "Gap from headline baseline to body, ~one headline line-height." }
+  },
+  "radius": {
+    "pill": { "$value": "9999px", "$type": "dimension", "$description": "Full pill radius for CTA shapes." }
+  },
+  "stroke": {
+    "hairline": { "$value": "1px", "$type": "dimension", "$description": "CTA pill outlines, UI borders." }
+  },
+  "motion": {
+    "$description": "The brand uses no motion in static surfaces. Animation tokens reserved for future web/Reels work.",
+    "disabled": { "$value": true, "$type": "boolean" }
+  }
+}

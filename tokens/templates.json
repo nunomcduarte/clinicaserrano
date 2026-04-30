@@ -1,0 +1,119 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "Layout specifications per Instagram template. Each template declares canvas, surface mode, slide structure, and which components live in which zones. References core.json, semantic.json, and components.json.",
+  "instagram-multi-service-slide": {
+    "$description": "Service-introduction slide for multi-service overview carousels. See templates/instagram-multi-service-slide.md.",
+    "canvas": {
+      "width": { "$value": 1080, "$type": "dimension" },
+      "height": { "$value": 1350, "$type": "dimension" },
+      "aspectRatio": "4:5"
+    },
+    "surface": "greige",
+    "safeAreaPadding": { "$value": "{space.edge-margin}", "$type": "dimension" },
+    "zones": {
+      "wordmark": {
+        "anchor": "top-right",
+        "marginTop": "{space.edge-margin}",
+        "marginRight": "{space.edge-margin}",
+        "component": "wordmark-block",
+        "variant": "horizontal"
+      },
+      "headline": {
+        "anchor": "left-center",
+        "marginLeft": "{space.edge-margin}",
+        "verticalBias": "slightly-above-center",
+        "component": "text.headline"
+      },
+      "body": {
+        "anchor": "right-under-headline",
+        "marginRight": "{space.edge-margin}",
+        "columnWidthRatio": "50%",
+        "topGap": "{space.headline-to-body}",
+        "component": "text.body",
+        "align": "right"
+      },
+      "cta": {
+        "anchor": "bottom-right",
+        "marginRight": "{space.edge-margin}",
+        "marginBottom": "{space.edge-margin}",
+        "component": "cta-pill",
+        "variant": "swipe-arrow"
+      }
+    }
+  },
+  "instagram-announcement-carousel": {
+    "$description": "Cream-mode 3-slide arc: cover → body → closing. See templates/instagram-announcement-carousel.md.",
+    "canvas": {
+      "width": { "$value": 1080, "$type": "dimension" },
+      "height": { "$value": 1350, "$type": "dimension" },
+      "aspectRatio": "4:5"
+    },
+    "surface": "cream",
+    "slides": {
+      "cover": {
+        "wordmark": { "anchor": "top-center", "variant": "horizontal" },
+        "headline": { "anchor": "center", "case": "uppercase", "align": "center" },
+        "subhead": { "anchor": "below-headline", "case": "uppercase", "align": "center" },
+        "cta": { "anchor": "bottom-center", "component": "cta-pill", "variant": "tap-target" }
+      },
+      "body": {
+        "wordmark": { "anchor": "bottom-center", "variant": "horizontal" },
+        "setup": { "anchor": "top-right", "align": "right" },
+        "reinforcement": { "anchor": "mid-left", "align": "left", "supports": "emphasis-bold" },
+        "bullets": { "anchor": "below-reinforcement", "component": "bullet-list" },
+        "cta": null
+      },
+      "closing": {
+        "wordmark": { "anchor": "bottom-center", "variant": "horizontal" },
+        "headline": { "anchor": "top-left", "case": "sentence", "align": "left" },
+        "substatement": { "anchor": "mid-low-right", "align": "right" },
+        "cta": null
+      }
+    }
+  },
+  "instagram-deep-dive-carousel": {
+    "$description": "Hybrid 3-slide arc: photo-led hero cover + greige body slides. Hook → stake → trust. See templates/instagram-deep-dive-carousel.md.",
+    "canvas": {
+      "width": { "$value": 1080, "$type": "dimension" },
+      "height": { "$value": 1350, "$type": "dimension" },
+      "aspectRatio": "4:5"
+    },
+    "slides": {
+      "hero": {
+        "surface": "photographic",
+        "photoConstraint": "action | motion | atmospheric — never portrait",
+        "headline": { "anchor": "top-left", "color": "{surface.greige.foreground}", "form": "question" },
+        "subhead": { "anchor": "below-headline" },
+        "wordmark": { "anchor": "bottom-left" },
+        "cta": { "anchor": "bottom-right", "variant": "swipe-arrow" }
+      },
+      "body": {
+        "surface": "greige",
+        "statement": { "anchor": "top-left", "align": "left", "supports": "emphasis-bold", "scale": "between-headline-and-body" },
+        "wordmark": { "anchor": "bottom-left" },
+        "cta": { "anchor": "bottom-right", "variant": "swipe-arrow" }
+      }
+    }
+  },
+  "instagram-team-portrait": {
+    "$description": "Single-image post for team member introductions. See templates/team-portrait-post.md.",
+    "canvas": {
+      "width": { "$value": 1080, "$type": "dimension" },
+      "height": { "$value": 1350, "$type": "dimension" },
+      "aspectRatio": "4:5"
+    },
+    "surface": "photographic",
+    "overlay": "none",
+    "$description_layout": "The image carries the entire surface. No typography is overlaid on portrait photography. Caption lives off-image."
+  },
+  "instagram-space-photo": {
+    "$description": "Single-image atmospheric post. See templates/space-photo-post.md.",
+    "canvas": {
+      "width": { "$value": 1080, "$type": "dimension" },
+      "height": { "$value": 1350, "$type": "dimension" },
+      "aspectRatio": "4:5"
+    },
+    "surface": "photographic",
+    "overlay": "none"
+  }
+}

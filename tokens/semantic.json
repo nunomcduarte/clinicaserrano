@@ -1,0 +1,92 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "Semantic aliases — meaning, not raw values. Layer 2 of 3. References core.json. The two surface modes (greige, cream) are first-class concepts and components should select on mode rather than picking colors directly. See brand/01-colors.md and CHANGELOG.md ADR-0002.",
+  "surface": {
+    "greige": {
+      "$description": "Default surface mode. Premium, atmospheric, service intros.",
+      "background": {
+        "$value": "{color.greige}",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.cream-warm}",
+        "$type": "color"
+      },
+      "texture": {
+        "$value": "paper-greige.png",
+        "$type": "asset",
+        "$description": "Full-bleed paper grain. Reference brand/04-texture.md."
+      }
+    },
+    "cream": {
+      "$description": "Announcement surface mode. Time-sensitive, urgent, directional.",
+      "background": {
+        "$value": "{color.cream-light}",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.charcoal}",
+        "$type": "color"
+      },
+      "texture": {
+        "$value": "paper-cream.png",
+        "$type": "asset",
+        "$description": "Subtler grain than greige. Almost flat. See brand/04-texture.md."
+      }
+    },
+    "auxiliary": {
+      "$description": "Reserved for physical textiles only (towels). Not currently used on digital surfaces.",
+      "background": {
+        "$value": "{color.navy}",
+        "$type": "color"
+      },
+      "foreground": {
+        "$value": "{color.cream-warm}",
+        "$type": "color"
+      }
+    }
+  },
+  "text": {
+    "$description": "Text roles. Color resolves from the active surface mode at render time.",
+    "headline": {
+      "fontFamily": { "$value": "{font.family.display-sans}", "$type": "fontFamily" },
+      "fontSize": { "$value": "{font.size.display}", "$type": "dimension" },
+      "fontWeight": { "$value": "{font.weight.regular}", "$type": "fontWeight" },
+      "lineHeight": { "$value": "{font.leading.tight}", "$type": "number" },
+      "tracking": { "$value": "{font.tracking.tight}", "$type": "dimension" },
+      "case": "sentence",
+      "align": "left"
+    },
+    "subhead": {
+      "fontFamily": { "$value": "{font.family.display-sans}", "$type": "fontFamily" },
+      "fontSize": { "$value": "{font.size.subhead}", "$type": "dimension" },
+      "fontWeight": { "$value": "{font.weight.regular}", "$type": "fontWeight" }
+    },
+    "body": {
+      "fontFamily": { "$value": "{font.family.display-sans}", "$type": "fontFamily" },
+      "fontSize": { "$value": "{font.size.body}", "$type": "dimension" },
+      "fontWeight": { "$value": "{font.weight.regular}", "$type": "fontWeight" },
+      "lineHeight": { "$value": "{font.leading.normal}", "$type": "number" }
+    },
+    "emphasis-bold": {
+      "$description": "Inline emphasis on key terms within body copy. One to three spans per slide. Whole words only. See brand/02-typography.md.",
+      "fontWeight": { "$value": "{font.weight.bold}", "$type": "fontWeight" }
+    }
+  },
+  "wordmark": {
+    "primary": {
+      "$description": "SERRANO portion. Didone serif, all caps, regular weight.",
+      "fontFamily": { "$value": "{font.family.wordmark-serif}", "$type": "fontFamily" },
+      "fontSize": { "$value": "{font.size.wordmark-primary}", "$type": "dimension" },
+      "fontWeight": { "$value": "{font.weight.regular}", "$type": "fontWeight" },
+      "case": "uppercase"
+    },
+    "secondary": {
+      "$description": "CLÍNICA portion. Display sans, all caps, light weight, looser tracking, optically matched cap height.",
+      "fontFamily": { "$value": "{font.family.display-sans}", "$type": "fontFamily" },
+      "fontWeight": { "$value": "{font.weight.light}", "$type": "fontWeight" },
+      "case": "uppercase",
+      "tracking": { "$value": "{font.tracking.loose}", "$type": "dimension" }
+    }
+  }
+}

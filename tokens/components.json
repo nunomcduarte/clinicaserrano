@@ -1,0 +1,58 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "Component-level tokens. Layer 3 of 3. References semantic.json. Each component declares its variants and inherits surface foreground at render time.",
+  "cta-pill": {
+    "$description": "Outlined pill button. Two variants: swipe-arrow (multi-slide nav) and tap-target (e.g. service A | service B). See brand/00-foundations.md.",
+    "shape": "rounded-full",
+    "stroke": { "$value": "{stroke.hairline}", "$type": "dimension" },
+    "fill": "transparent",
+    "border": { "$value": "{surface.{mode}.foreground}", "$type": "color" },
+    "variants": {
+      "swipe-arrow": {
+        "icon": "→",
+        "label": null,
+        "widthRatio": "14%",
+        "heightRatioOfWidth": "30%",
+        "$description": "Bottom-right of multi-slide carousels. Signals 'swipe.' Present on every slide including the last."
+      },
+      "tap-target": {
+        "icon": null,
+        "labelPattern": "<service-a> | <service-b>",
+        "widthRatio": "auto",
+        "heightRatioOfWidth": "30%",
+        "$description": "Wider variant for cover slides where two service offerings need to be surfaced. Bottom-center on announcement covers."
+      }
+    }
+  },
+  "wordmark-block": {
+    "$description": "The two-part SERRANO CLÍNICA mark, set on a single baseline. Stacked variant exists only for narrow physical surfaces (towels) — never on digital. See brand/03-logo.md.",
+    "layout": "inline",
+    "primary": { "$value": "{wordmark.primary}", "$type": "object" },
+    "secondary": { "$value": "{wordmark.secondary}", "$type": "object" },
+    "variants": {
+      "horizontal": {
+        "$description": "Default. SERRANO CLÍNICA on a single line."
+      },
+      "stacked": {
+        "$description": "SERRANO over CLÍNICA. Reserved for physical textiles. Never digital."
+      }
+    }
+  },
+  "headline-block": {
+    "$description": "The combined headline + body copy block on typographic slides. See brand/02-typography.md.",
+    "headline": { "$value": "{text.headline}", "$type": "object" },
+    "body": {
+      "extends": "{text.body}",
+      "align": "right",
+      "columnWidthRatio": "50%",
+      "topGap": "{space.headline-to-body}"
+    }
+  },
+  "bullet-list": {
+    "$description": "Plain bullet markers, used in announcement body slides. Three items canonical, keep tight.",
+    "marker": "•",
+    "alignment": "left",
+    "fontWeight": { "$value": "{font.weight.regular}", "$type": "fontWeight" },
+    "maxItems": 3
+  }
+}
