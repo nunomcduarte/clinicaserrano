@@ -56,9 +56,26 @@ legacy_form:              # optional — only if the asset uses a deprecated rul
 ### Required sections
 
 - `## Caption` — verbatim quote of the published copy. Preserve original even if it uses deprecated forms (flag in `legacy_form` instead of editing).
+- `## Source assets` (when images are available) — embedded source images. See "Attaching source images" below.
 - `## Image notes` or `## Slide transcript` — what's actually in the asset.
 - `## What this post established for the system` — the rules and patterns this asset originated or confirmed.
 - `## Open questions raised` — anything you couldn't resolve from the asset alone.
+
+### Attaching source images
+
+References can optionally include the original published images (Instagram screenshots, photographs). Convention:
+
+1. Create a sibling directory matching the markdown's slug — e.g. `references/carousels/YYYY-MM-DD-services.md` gets `references/carousels/YYYY-MM-DD-services/`.
+2. Name files descriptively: `slide-1.png`, `slide-2.png` for carousels; `image.jpg` for single-image posts; `cover.png`, `body-1.png` for mixed-layout carousels.
+3. Add an `assets:` block to the frontmatter:
+   ```yaml
+   assets:
+     dir: ./YYYY-MM-DD-slug/
+     files: [slide-1.png, slide-2.png, ...]
+   ```
+4. Embed each image in a `## Source assets` section using relative paths.
+
+Use original-quality PNG/JPG. Do not strip metadata — the EXIF date is useful provenance.
 
 ## Adding a new template
 
